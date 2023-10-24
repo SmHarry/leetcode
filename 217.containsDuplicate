@@ -1,0 +1,15 @@
+class Solution(object):
+    def containsDuplicate(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: bool
+        """
+        hmap = {}
+        flag = False 
+        for i in nums:
+            if hmap.get(i, 0) == 0:
+                hmap[i] = 1
+            else:
+                flag = True
+                break
+        return flag
