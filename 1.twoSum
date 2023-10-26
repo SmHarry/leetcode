@@ -1,0 +1,14 @@
+class Solution(object):
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        hashTable = {}
+        for i in range(len(nums)):
+            if nums[i] not in hashTable:
+                deficitToTarget = target - nums[i]
+                hashTable[deficitToTarget] = i
+            else:
+                return [hashTable[nums[i]], i]
