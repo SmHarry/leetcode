@@ -1,0 +1,14 @@
+class Solution(object):
+    def groupAnagrams(self, strs):
+        """
+        :type strs: List[str]
+        :rtype: List[List[str]]
+        """
+        hashtable = {}
+        for s in strs:
+            s_sorted  = "".join(sorted(s))
+            if s_sorted not in hashtable:
+                hashtable[s_sorted] = [s]
+            else: 
+                hashtable[s_sorted].append(s)
+        return hashtable.values()
